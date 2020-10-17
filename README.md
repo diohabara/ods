@@ -2,4 +2,8 @@
 
 ## Chap1
 
-Implement interfaces.
+- Implement [interfaces](src/lib.rs).
+
+## Chap2
+
+- Implement [ArrayStack](src/array.rs)
