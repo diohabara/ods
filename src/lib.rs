@@ -17,10 +17,10 @@ pub trait Deque<T> {
 
 pub trait List<T: Clone> {
     fn size(&self) -> usize;
-    fn get(&self, i: usize) -> T;
-    fn set(&mut self, i: usize, x: T);
+    fn get(&self, i: usize) -> Option<T>;
+    fn set(&mut self, i: usize, x: T) -> Option<T>;
     fn add(&mut self, i: usize, x: T);
-    fn remove(&mut self, i: usize);
+    fn remove(&mut self, i: usize) -> Option<T>;
 }
 
 pub trait USet<T: Clone> {
@@ -36,3 +36,6 @@ pub trait SSet<T: Ord + Clone> {
     fn remove(&mut self, x: T) -> Option<T>;
     fn find(&self, x: T) -> Option<T>;
     fn compare(&self, other: T) -> bool;
+}
+
+pub mod array;
