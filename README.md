@@ -2,8 +2,8 @@
 
 ## Chap1
 
-- Implement [interfaces](src/lib.rs).
+- [interfaces](src/lib.rs).
 
 ## Chap2
 
-- Implement [ArrayStack](src/array.rs)
+- [ArrayStack](src/array.rs)

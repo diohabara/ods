@@ -38,4 +38,4 @@ pub trait SSet<T: Ord + Clone> {
     fn compare(&self, other: T) -> bool;
 }
 
-pub mod array;
+pub mod array_stack;

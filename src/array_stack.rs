@@ -3,13 +3,13 @@ use std::cmp;
 use std::iter;
 
 #[derive(Clone, Debug, Default, Eq, Hash, Ord, PartialEq, PartialOrd)]
-pub struct Array<T> {
+pub struct ArrayStack<T> {
     a: Box<[Option<T>]>,
     length: usize, // heaped size
     n: usize,      // size of this array
 }
 
-impl<T> Array<T> {
+impl<T> ArrayStack<T> {
     fn alloc_boxed_slice(size: usize) -> Box<[Option<T>]> {
         iter::repeat_with(Default::default)
             .take(size)
@@ -36,7 +36,7 @@ impl<T> Array<T> {
     }
 }
 
-impl<T: Clone> List<T> for Array<T> {
+impl<T: Clone> List<T> for ArrayStack<T> {
     fn size(&self) -> usize {
         self.n
     }
@@ -73,13 +73,13 @@ impl<T: Clone> List<T> for Array<T> {
 
 #[cfg(test)]
 mod tests {
-    use super::Array;
+    use super::ArrayStack;
     use crate::List;
 
     #[test]
     fn test_array() {
         // initialized array has no elements
-        let mut array: Array<i32> = Array::new(10);
+        let mut array: ArrayStack<i32> = ArrayStack::new(10);
         check_arr_size(&array, 10, 0);
 
         // adding elements just increase n
@@ -112,7 +112,7 @@ mod tests {
         }
     }
 
-    fn check_arr_size<T>(array: &Array<T>, length: usize, n: usize) {
+    fn check_arr_size<T>(array: &ArrayStack<T>, length: usize, n: usize) {
         assert_eq!((array.length, array.n), (length, n));
     }
 }
