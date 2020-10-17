@@ -15,7 +15,7 @@ pub trait Deque<T> {
     fn remove_last(&mut self);
 }
 
-pub trait List<T> {
+pub trait List<T: Clone> {
     fn size(&self) -> usize;
     fn get(&self, i: usize) -> T;
     fn set(&mut self, i: usize, x: T);
@@ -23,17 +23,16 @@ pub trait List<T> {
     fn remove(&mut self, i: usize);
 }
 
-pub trait USet<T> {
+pub trait USet<T: Clone> {
     fn size(&self) -> usize;
     fn add(&mut self, x: T) -> bool;
     fn remove(&mut self, x: T) -> Option<T>;
     fn find(&self, x: T) -> Option<T>;
 }
 
-pub trait SSet<T: Ord> {
+pub trait SSet<T: Ord + Clone> {
     fn size(&self) -> usize;
     fn add(&mut self, x: T) -> bool;
     fn remove(&mut self, x: T) -> Option<T>;
     fn find(&self, x: T) -> Option<T>;
     fn compare(&self, other: T) -> bool;
-}
