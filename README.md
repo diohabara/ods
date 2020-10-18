@@ -6,4 +6,4 @@
 
 ## Chap2
 
-- [ArrayStack](src/array.rs)
+- [ArrayStack](src/array_stack.rs)
