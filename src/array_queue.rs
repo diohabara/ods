@@ -31,6 +31,9 @@ impl<T> ArrayQueue<T> {
         self.a = b;
         self.j = 0;
     }
+    pub fn debug_array_stack(&self) {
+        println!("j: {}, n: {}", &self.j, &self.n);
+    }
 }
 
 impl<T: Clone> Queue<T> for ArrayQueue<T> {
@@ -55,15 +58,22 @@ impl<T: Clone> Queue<T> for ArrayQueue<T> {
 #[cfg(test)]
 mod tests {
     use super::ArrayQueue;
+    use crate::Queue;
 
     #[test]
     fn test_array_queue() {
         // initialize
-        let q = ArrayQueue::<i32>::new(10);
-        check_arr_size(&q, 10, 0);
-        // add
+        let mut q: ArrayQueue<i32> = ArrayQueue::new(10);
+        check_queue_size(&q, 10, 0);
+        // add and remove
+        q.add(-1);
+        q.add(1);
+        for elem in [-1, 1].iter() {
+            assert_eq!(q.remove(), Some(*elem));
+        }
+        check_queue_size(&q, 1, 0);
     }
-    fn check_arr_size<T>(queue: &ArrayQueue<T>, len: usize, n: usize) {
+    fn check_queue_size<T>(queue: &ArrayQueue<T>, len: usize, n: usize) {
         assert_eq!((queue.a.len(), queue.n), (len, n));
     }
 }
