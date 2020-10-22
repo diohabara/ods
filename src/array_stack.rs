@@ -1,6 +1,6 @@
+use std::{cmp, iter};
+
 use crate::List;
-use std::cmp;
-use std::iter;
 
 #[derive(Clone, Debug, Default, Eq, Hash, Ord, PartialEq, PartialOrd)]
 pub struct ArrayStack<T> {

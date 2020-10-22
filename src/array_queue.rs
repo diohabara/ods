@@ -1,6 +1,6 @@
+use std::{cmp, iter};
+
 use crate::Queue;
-use std::cmp;
-use std::iter;
 
 #[derive(Clone, Debug, Default, Eq, Hash, Ord, PartialOrd, PartialEq)]
 pub struct ArrayQueue<T> {
