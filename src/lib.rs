@@ -1,6 +1,6 @@
 pub trait Queue<T> {
-    fn enqueue(&mut self, other: T);
-    fn dequeue(&mut self);
+    fn add(&mut self, other: T);
+    fn remove(&mut self) -> Option<T>;
 }
 
 pub trait Stack<T> {
@@ -38,4 +38,5 @@ pub trait SSet<T: Ord + Clone> {
     fn compare(&self, other: T) -> bool;
 }
 
+pub mod array_queue;
 pub mod array_stack;
