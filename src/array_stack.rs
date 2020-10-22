@@ -29,7 +29,7 @@ impl<T> ArrayStack<T> {
             b[i] = self.a[i].take();
         }
         self.a = b;
-        self.length = self.n*2;
+        self.length = self.n * 2;
     }
     pub fn print_array(&self) {
         println!("length: {}, n: {}", &self.length, &self.n);
