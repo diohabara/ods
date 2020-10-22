@@ -6,7 +6,7 @@ use std::iter;
 pub struct ArrayQueue<T> {
     a: Box<[Option<T>]>,
     j: usize, // current position
-    n: usize, // the number of elements in the stack
+    n: usize, // the number of elements in the queue
 }
 
 impl<T> ArrayQueue<T> {
