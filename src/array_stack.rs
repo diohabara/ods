@@ -77,7 +77,7 @@ mod tests {
     use crate::List;
 
     #[test]
-    fn test_array() {
+    fn test_array_stack() {
         // initialized array has no elements
         let mut array: ArrayStack<i32> = ArrayStack::new(10);
         check_arr_size(&array, 10, 0);
