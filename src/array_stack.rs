@@ -31,7 +31,7 @@ impl<T> ArrayStack<T> {
         self.a = b;
         self.length = self.n * 2;
     }
-    pub fn print_array(&self) {
+    pub fn debug_array_stack(&self) {
         println!("length: {}, n: {}", &self.length, &self.n);
     }
 }
@@ -94,7 +94,6 @@ mod tests {
         let achieved = array.remove(0);
         let expected = Some(-1);
         assert_eq!(achieved, expected);
-        array.print_array();
         check_arr_size(&array, 2, 1);
 
         // setting elements
