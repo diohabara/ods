@@ -5,7 +5,7 @@ use std::iter;
 #[derive(Clone, Debug, Default, Eq, Hash, Ord, PartialOrd, PartialEq)]
 pub struct ArrayQueue<T> {
     a: Box<[Option<T>]>,
-    j: usize, // starting position
+    j: usize, // current position
     n: usize, // the number of elements in the stack
 }
 
