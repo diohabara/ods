@@ -4,9 +4,9 @@ use crate::List;
 
 #[derive(Clone, Debug, Default, Eq, Hash, Ord, PartialEq, PartialOrd)]
 pub struct ArrayStack<T> {
-    a: Box<[Option<T>]>,
+    pub a: Box<[Option<T>]>,
     length: usize, // heaped size
-    n: usize,      // size of this array
+    pub n: usize,  // size of this array
 }
 
 impl<T> ArrayStack<T> {
