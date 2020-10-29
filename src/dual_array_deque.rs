@@ -90,7 +90,7 @@ mod tests {
     use super::DualArrayDeque;
 
     #[test]
-    fn test_array_stack() {
+    fn test_dual_array_deque() {
         // initialized array has no elements
         let mut deque: DualArrayDeque<i32> = DualArrayDeque::new();
         check_arr_size(&deque, 0, 0, 0);
