@@ -1,5 +1,7 @@
 # obs
 
+[![ci](https://github.com/diohabara/ods/actions/workflows/ci.yml/badge.svg)](https://github.com/diohabara/ods/actions/workflows/ci.yml)
+
 ## Chap1
 
 - [interfaces](src/lib.rs).
